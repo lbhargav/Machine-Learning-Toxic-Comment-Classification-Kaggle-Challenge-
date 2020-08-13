@@ -1,0 +1,30 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+
+<div class="container">
+  <div class="jumbotron" style="background-color:#1daeff !important;">
+    <h2 style="color:#fff;">Toxic Comment Classifier</h2>
+    <p style="color:#fff;">Using Machine Learning to Classify Comment</p>
+  </div>
+  <p>ML App.</p>           
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-primary">
+      <div class="panel-heading" style="background-color:#1563ff ">Toxic Comment Classifier</div>
+      <div class="panel-body">
+<!-- Main Input For Receiving Query to our ML -->	
+      	<form action="{{ url_for('predict_prob')}}" method="POST">
+			<input type="text" name="usercomment">
+			<button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block styles %}
+{{super()}} <!-- Allows Javascripts and other styles to be inclusive in bootstrap -->
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='css/styles.css')}}">
+{% endblock %}

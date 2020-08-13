@@ -1,0 +1,39 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+
+<div class="container">
+  <div class="jumbotron" style="background-color:#1daeff !important;">
+    <h2 style="color:#fff;">Toxic Comment Classfication </h2>
+    <p style="color:#fff;">Using Machine Learning to Classify Comment</p>
+  </div>
+  <p>ML App.</p>           
+</div>
+
+<div class="card text-center">
+  <div> <a href="./" class="topnav_active">Home</a></div>
+  <div class="card-header">
+    Prediction
+  </div>
+  <div class="card-body" style="background-color:#1daeff;">
+    <hr/>
+    <p class="card-text"><div class="alert alert-danger" role="alert">
+  {{ name }}
+</div>
+
+<!-- Main ML Prediction Display Here -->
+    <p class="card-text"><div class="alert alert-danger" role="alert">
+  The comment is classified with probability {{ prediction }} as toxic
+  </div>
+  </div>
+<!-- Main ML Prediction Display Ends Here -->
+  <div class="card-footer text-muted">
+  </div>
+</div>
+
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='css/styles.css')}}">
+{% endblock %}
