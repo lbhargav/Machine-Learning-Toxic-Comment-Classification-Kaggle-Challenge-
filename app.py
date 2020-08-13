@@ -13,8 +13,8 @@ def index():
 @app.route('/predict_prob', methods=['POST'])
 def predict_prob():
     # Loading our ML Model
-    loaded_model = pickle.load(open('src/model.pkl', 'rb'))
-    loaded_tfidf_vector = pickle.load(open('src/tfidf_vector.pkl', 'rb'))
+    loaded_model = pickle.load(open('model.pkl', 'rb'))
+    loaded_tfidf_vector = pickle.load(open('tfidf_vector.pkl', 'rb'))
 
     # Receives the input query from form
     if request.method == 'POST':
